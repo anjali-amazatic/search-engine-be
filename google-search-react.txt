@@ -1,0 +1,64 @@
+
+last 3 search
+view all
+above 3 search login required 
+search button 
+last 3 search 	
+searches jast zale ki 10 items per page pagination 
+searches ch sorting recent vrti pahije 
+2 button search view all 
+login page ,registration 
+
+
+how should I start ?
+should I required the django API as well?
+class based or function based approach
+styled component css module?
+boostrap have to use 
+have to use redux or not
+npm yarn?
+
+
+react fragment  => <>
+useEffect()=>render automatic when function called 1st time
+autocomplete ="off"
+
+➡️handling useState for the form registration
+const [userRegistration ,setUserRegistration] = useState({
+username="",
+email="",
+password=""
+})
+
+---------------------------------------------------------------------
+➡️Login API
+knox authentication 
+username=anjali pass=anjali
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
