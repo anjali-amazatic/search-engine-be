@@ -11,6 +11,9 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
+import dj_database_url
+import datetime
+import os
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -80,18 +83,18 @@ WSGI_APPLICATION = 'googleSearch.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
+
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'googlesearch',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'googlesearch',
-    }
-}
+
+DEFAULT_CONNECTION = dj_database_url.parse(
+   os.environ.get("DATABASE_URL_CONFIG"))
+DATABASES = {"default": DEFAULT_CONNECTION}
+
 
 
 # Password validation
@@ -153,3 +156,7 @@ DJOSER = {
 
 # AUTH_USER_MODEL = 'user.User'
 CORS_ALLOWED_ORIGINS = ["http://localhost:3000"]
+
+REST_KNOX = {
+    'TOKEN_TTL': datetime.timedelta(hours=12),
+}
