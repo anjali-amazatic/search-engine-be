@@ -89,7 +89,7 @@ class ViewAll(generics.ListAPIView):
 
     def list(self, requset):
         data = requset.data
-        queryset = Search.objects.all().order_by('-created_at')
+        queryset = Search.objects.filter(user_id=requset.user.id).order_by('-created_at')
         data['user'] = requset.user.id
         serializer = ViewAllSerializer(queryset, many=True)
         return Response(serializer.data)
